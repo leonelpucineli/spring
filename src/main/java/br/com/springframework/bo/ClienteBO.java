@@ -25,6 +25,9 @@ public class ClienteBO implements CRUD<Cliente, Long> {
 
     @Override
     public void insere(Cliente cliente) {
+        if (cliente == null) {
+            throw new IllegalArgumentException("Cliente não pode ser nulo");
+        }
         dao.insere(cliente);
     }
 
