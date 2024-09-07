@@ -36,9 +36,11 @@ public class ClienteController {
 
         if (cliente.getId() == null) {
             bo.insere(cliente);
+            attr.addFlashAttribute("feedback", "Cliente cadastrado com sucesso");
         }
         else {
             bo.atualiza(cliente);
+            attr.addFlashAttribute("feedback", "Cliente atualizado com sucesso");
         }
         return "redirect:/clientes";
         // return "/cliente/formulario";
